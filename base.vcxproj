@@ -110,7 +110,14 @@
     <ClInclude Include="Jogador.h" />
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Objeto.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="base.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bin\assets\sprites\jogador1.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
