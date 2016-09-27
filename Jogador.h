@@ -1,6 +1,5 @@
-#include "libUnicornio.h"
-#include "util.h"
 #pragma once
+#include "util.h"
 class Jogador
 {
 private:
@@ -8,18 +7,20 @@ private:
 	Sprite sprite;
 	Som som;
 	int vidas, rupees, bombas, flechas, numJogador;
+	bool colisaoJ1, colisaoJ2;
 
 public:
 	Jogador();
 	~Jogador();
 
-	void inicializar();
+	void inicializar(int jogador, Sprite sprite_); // se é jogador 1 ou 2
 	void desenhar();
 	void atualizar();
-	void resetar();
+	void resetar(); // volta o jogador ao padrão inicial
 
 	void testarColisao(TipoObjeto tipo);
 
+	// GETS e SETS
 	float getX();
 	float getY();
 	float getVelocidade();
@@ -28,14 +29,16 @@ public:
 	int getBombas();
 	int getFlechas();
 	int getNumJogador();
-
-	void setColisaoJ1();
-	void setColisaoJ2();
-	void setVelocidade();
-	void setVidas();
-	void setRupees();
-	void setBombas();
-	void setFlechas();
+	bool getColisaoJ1();
+	bool getColisaoJ2();
+	
+	void setVelocidade(float velo);
+	void setVidas(int vidas_);
+	void setRupees(int rup);
+	void setBombas(int bomb);
+	void setFlechas(int fle);
+	void setColisaoJ1(bool colisao);
+	void setColisaoJ2(bool colisao);
 
 };
 
