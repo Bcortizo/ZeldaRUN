@@ -117,6 +117,12 @@
     <ResourceCompile Include="base.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="bin\assets\backgrounds\telaJogo.jpg" />
+    <Image Include="bin\assets\buttons\botao1.png" />
+    <Image Include="bin\assets\buttons\botao2.png" />
+    <Image Include="bin\assets\buttons\botao3.png" />
+    <Image Include="bin\assets\buttons\botao4.png" />
+    <Image Include="bin\assets\buttons\botao5.png" />
     <Image Include="bin\assets\sprites\jogador1.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

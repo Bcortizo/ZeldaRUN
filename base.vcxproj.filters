@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Itens.cpp" />
+    <ClCompile Include="Jogador.cpp" />
+    <ClCompile Include="Jogo.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Objeto.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Itens.h" />
+    <ClInclude Include="Jogador.h" />
+    <ClInclude Include="Jogo.h" />
+    <ClInclude Include="Objeto.h" />
+    <ClInclude Include="util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Sprites">
+      <UniqueIdentifier>{316f1c1d-33a9-426c-9406-742e26eeb950}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="bin\assets\sprites\jogador1.png">
+      <Filter>Sprites</Filter>
+    </Image>
+    <Image Include="bin\assets\buttons\botao5.png">
+      <Filter>Sprites</Filter>
+    </Image>
+    <Image Include="bin\assets\buttons\botao1.png">
+      <Filter>Sprites</Filter>
+    </Image>
+    <Image Include="bin\assets\buttons\botao2.png">
+      <Filter>Sprites</Filter>
+    </Image>
+    <Image Include="bin\assets\buttons\botao3.png">
+      <Filter>Sprites</Filter>
+    </Image>
+    <Image Include="bin\assets\buttons\botao4.png">
+      <Filter>Sprites</Filter>
+    </Image>
+    <Image Include="bin\assets\backgrounds\telaJogo.jpg">
+      <Filter>Sprites</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
