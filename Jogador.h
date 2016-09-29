@@ -3,7 +3,7 @@
 class Jogador
 {
 private:
-	float x, y, velocidade;
+	int x, y, velocidade;
 	Sprite sprite;
 	Som som;
 	int vidas, rupees, bombas, flechas, numJogador;
@@ -13,7 +13,7 @@ public:
 	Jogador();
 	~Jogador();
 
-	void inicializar(int jogador, Sprite sprite_); // se é jogador 1 ou 2
+	void inicializar(int jogador); // se é jogador 1 ou 2
 	void desenhar();
 	void atualizar();
 	void resetar(); // volta o jogador ao padrão inicial
@@ -21,9 +21,9 @@ public:
 	void testarColisao(TipoObjeto tipo);
 
 	// GETS e SETS
-	float getX();
-	float getY();
-	float getVelocidade();
+	int getX();
+	int getY();
+	int getVelocidade();
 	int getVidas();
 	int getRupees();
 	int getBombas();
@@ -32,7 +32,7 @@ public:
 	bool getColisaoJ1();
 	bool getColisaoJ2();
 	
-	void setVelocidade(float velo);
+	void setVelocidade(int velo);
 	void setVidas(int vidas_);
 	void setRupees(int rup);
 	void setBombas(int bomb);

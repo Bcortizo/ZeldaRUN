@@ -5,7 +5,11 @@
 enum TipoObjeto
 {
 	MOBLIN,
-	DEKU,
+	DEKU
+};
+
+enum TipoItem
+{
 	RUPEEVERDE,
 	RUPEEVERMELHA,
 	RUPEEAZUL,

@@ -22,10 +22,9 @@ void Jogo::telaInicial()
 
 void Jogo::telaJogo()
 {
-	spr_telaJogo.desenhar(gJanela.getLargura() / 2, gJanela.getAltura() / 2);
-
-	jogador1.atualizar();
-	jogador1.desenhar();
+	// aqui entraria o lance das fases
+	fase[0].atualizar();
+	fase[0].desenhar();
 
 	botaoVoltar.atualizar();
 	botaoVoltar.desenhar();
@@ -58,18 +57,11 @@ void Jogo::inicializar()
 	botaoVoltar.setSpriteSheet("botaoVoltar");
 
 	// configura a posição dos botões
-	botaoJogar.setPos(gJanela.getLargura() * 3 / 4, 600);
+	botaoJogar.setPos(gJanela.getLargura() * 3 / 4, 640);
 	botaoSair.setPos(gJanela.getLargura() * 3 / 4, 700);
 	botaoVoltar.setPos(gJanela.getLargura() * 3 / 4, 700);
 
-	// carrega e atribui sprite do jogador, depois inicializa o jogador
-	gRecursos.carregarSpriteSheet("jogador1", "assets/sprites/jogador1.png", 8, 12);
-	spr_Jogador.setSpriteSheet("jogador1");
-	jogador1.inicializar(1, spr_Jogador);
-
-	// carrega e atribui sprites das telas
-	gRecursos.carregarSpriteSheet("telaJogo", "assets/backgrounds/telaJogo.jpg");
-	spr_telaJogo.setSpriteSheet("telaJogo");
+	fase[0].inicializar();
 
 	// põe o jogo no status da tela inicial
 	status = INICIAL;

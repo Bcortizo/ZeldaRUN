@@ -11,19 +11,24 @@ Jogador::~Jogador()
 {
 }
 
-void Jogador::inicializar(int jogador, Sprite sprite_)
+void Jogador::inicializar(int jogador)
 {
 	numJogador = jogador;
-	sprite = sprite_;
+
+	//carrega o sprite do jogador
+	gRecursos.carregarSpriteSheet("jogador1", "assets/sprites/jogador1.png", 8, 12);
+	sprite.setSpriteSheet("jogador1");
+
 	sprite.setVelocidadeAnimacao(5);
 	sprite.setEscala(3, 3);
 	resetar();
+
 	// outras inicializações
 }
 
 void Jogador::desenhar()
 {
-	sprite.desenhar((int)getX(), (int)getY());
+	sprite.desenhar(x, y);
 }
 
 void Jogador::atualizar()
@@ -75,17 +80,17 @@ void Jogador::resetar()
 	//som = som_Jogador;
 }
 
-float Jogador::getX()
+int Jogador::getX()
 {
 	return x;
 }
 
-float Jogador::getY()
+int Jogador::getY()
 {
 	return y;
 }
 
-float Jogador::getVelocidade()
+int Jogador::getVelocidade()
 {
 	return velocidade;
 }
@@ -135,7 +140,7 @@ void Jogador::setColisaoJ2(bool colisao)
 	colisaoJ2 = colisao;
 }
 
-void Jogador::setVelocidade(float velo)
+void Jogador::setVelocidade(int velo)
 {
 	velocidade = velo;
 }
