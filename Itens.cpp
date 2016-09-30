@@ -46,6 +46,7 @@ void Itens::atualizar()
 	//testarColisao();
 	if (y > gJanela.getAltura() + 20)
 	{
+		x = rand() % (gJanela.getLargura() + 1);
 		y = -(rand() % 565 + 70);
 		
 		switch (rand() % 2)

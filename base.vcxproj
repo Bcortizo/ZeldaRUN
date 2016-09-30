@@ -99,6 +99,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Fase.cpp" />
     <ClCompile Include="Itens.cpp" />
     <ClCompile Include="Jogador.cpp" />
     <ClCompile Include="Jogo.cpp" />
@@ -106,6 +107,7 @@
     <ClCompile Include="Objeto.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Fase.h" />
     <ClInclude Include="Itens.h" />
     <ClInclude Include="Jogador.h" />
     <ClInclude Include="Jogo.h" />
@@ -117,12 +119,15 @@
     <ResourceCompile Include="base.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="bin\assets\backgrounds\grass2.png" />
     <Image Include="bin\assets\backgrounds\telaJogo.jpg" />
     <Image Include="bin\assets\buttons\botao1.png" />
     <Image Include="bin\assets\buttons\botao2.png" />
     <Image Include="bin\assets\buttons\botao3.png" />
     <Image Include="bin\assets\buttons\botao4.png" />
     <Image Include="bin\assets\buttons\botao5.png" />
+    <Image Include="bin\assets\sprites\bomba.png" />
+    <Image Include="bin\assets\sprites\flecha.png" />
     <Image Include="bin\assets\sprites\jogador1.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

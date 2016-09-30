@@ -44,22 +44,22 @@ void Jogador::atualizar()
 		sprite.setAnimacao(0, true);
 	}
 	
-	if (gTeclado.segurando[TECLA_A])
+	if (gTeclado.segurando[TECLA_A] && x > 8)
 	{
 		x -= velocidade;
 	}
 
-	if (gTeclado.segurando[TECLA_D])
+	if (gTeclado.segurando[TECLA_D] && x < gJanela.getLargura() - 8)
 	{
 		x += velocidade;
 	}
 
-	if (gTeclado.segurando[TECLA_W])
+	if (gTeclado.segurando[TECLA_W] && y > 0)
 	{
 		y -= velocidade;
 	}
 
-	if (gTeclado.segurando[TECLA_S])
+	if (gTeclado.segurando[TECLA_S] && y < gJanela.getAltura() - 32)
 	{
 		y += velocidade;
 	}

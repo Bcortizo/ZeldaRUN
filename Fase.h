@@ -6,10 +6,11 @@
 class Fase
 {
 private:
-	Sprite sFundo, sInterface;
+	Sprite sFundo, sFundo2, sInterface;
 	Som musica;
 	Itens item1, item2;;
 	Jogador jogador1, jogador2;
+	int scrollTela;
 
 public:
 	Fase();

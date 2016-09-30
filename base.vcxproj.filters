@@ -6,6 +6,7 @@
     <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Objeto.cpp" />
+    <ClCompile Include="Fase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Itens.h" />
@@ -13,6 +14,8 @@
     <ClInclude Include="Jogo.h" />
     <ClInclude Include="Objeto.h" />
     <ClInclude Include="util.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Fase.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Sprites">
@@ -41,5 +44,17 @@
     <Image Include="bin\assets\backgrounds\telaJogo.jpg">
       <Filter>Sprites</Filter>
     </Image>
+    <Image Include="bin\assets\sprites\bomba.png">
+      <Filter>Sprites</Filter>
+    </Image>
+    <Image Include="bin\assets\sprites\flecha.png">
+      <Filter>Sprites</Filter>
+    </Image>
+    <Image Include="bin\assets\backgrounds\grass2.png">
+      <Filter>Sprites</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="base.rc" />
   </ItemGroup>
 </Project>
