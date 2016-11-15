@@ -11,13 +11,23 @@ Jogador::~Jogador()
 {
 }
 
-void Jogador::inicializar(int jogador)
+void Jogador::inicializar(int jogador, int x_, int y_)
 {
 	numJogador = jogador;
+	xInicial = x_;
+	yInicial = y_;
 
-	//carrega o sprite do jogador
-	gRecursos.carregarSpriteSheet("jogador1", "assets/sprites/jogador1.png", 8, 12);
-	sprite.setSpriteSheet("jogador1");
+	//carrega o sprite do jogador 1 e do 2
+	if (numJogador == 1)
+	{
+		gRecursos.carregarSpriteSheet("jogador1", "assets/sprites/jogador1.png", 8, 12);
+		sprite.setSpriteSheet("jogador1");
+	}
+	else if (numJogador == 2)
+	{
+		gRecursos.carregarSpriteSheet("jogador2", "assets/sprites/jogador1.png", 8, 12);
+		sprite.setSpriteSheet("jogador2");
+	}
 
 	sprite.setVelocidadeAnimacao(5);
 	sprite.setEscala(3, 3);
@@ -34,7 +44,6 @@ void Jogador::desenhar()
 void Jogador::atualizar()
 {
 	sprite.avancarAnimacao();
-
 	if (sprite.getFrame() == 11 && sprite.getAnimacao() == 0)
 	{
 		sprite.setAnimacao(4, true);
@@ -43,33 +52,60 @@ void Jogador::atualizar()
 	{
 		sprite.setAnimacao(0, true);
 	}
-	
-	if (gTeclado.segurando[TECLA_A] && x > 8)
-	{
-		x -= velocidade;
-	}
 
-	if (gTeclado.segurando[TECLA_D] && x < gJanela.getLargura() - 8)
-	{
-		x += velocidade;
-	}
+	// movimentos do jogador 1 e do 2
+	if (numJogador == 1)
+	{ 
+		if (gTeclado.segurando[TECLA_A] && x > 8)
+		{
+			x -= velocidade;
+		}
 
-	if (gTeclado.segurando[TECLA_W] && y > 0)
-	{
-		y -= velocidade;
-	}
+		if (gTeclado.segurando[TECLA_D] && x < gJanela.getLargura() - 8)
+		{
+			x += velocidade;
+		}
 
-	if (gTeclado.segurando[TECLA_S] && y < gJanela.getAltura() - 32)
+		if (gTeclado.segurando[TECLA_W] && y > 0)
+		{
+			y -= velocidade;
+		}
+
+		if (gTeclado.segurando[TECLA_S] && y < gJanela.getAltura() - 32)
+		{
+			y += velocidade;
+		}
+	}
+	else if (numJogador == 2)
 	{
-		y += velocidade;
+		if (gTeclado.segurando[TECLA_ESQ] && x > 8)
+		{
+			x -= velocidade;
+		}
+
+		if (gTeclado.segurando[TECLA_DIR] && x < gJanela.getLargura() - 8)
+		{
+			x += velocidade;
+		}
+
+		if (gTeclado.segurando[TECLA_CIMA] && y > 0)
+		{
+			y -= velocidade;
+		}
+
+		if (gTeclado.segurando[TECLA_BAIXO] && y < gJanela.getAltura() - 32)
+		{
+			y += velocidade;
+		}
 	}
 
 }
 
+// reseta o jogador à condição inicial
 void Jogador::resetar()
 {
-	x = gJanela.getLargura() / 2;
-	y = gJanela.getAltura() * 4/5;
+	x = xInicial;
+	y = yInicial;
 	velocidade = 2;
 	vidas = 5;
 	bombas = 0;
@@ -79,6 +115,38 @@ void Jogador::resetar()
 	//sprite = spr_Jogador;
 	//som = som_Jogador;
 }
+
+void Jogador::colisaoItens(Itens &item)
+{
+	// colisões com os itens (deve ter jeito melhor de fazer)
+	if (uniTestarColisao(sprite, x, y, 0,
+		item.getSprite(), item.getX(), item.getY(), 0))
+	{
+		if (numJogador == 1)
+		{
+			if (item.getTipo() == BOMBA)
+			{
+				bombas++;
+			}
+			else if (item.getTipo() == FLECHA)
+			{
+				flechas++;
+			}
+		}
+		else if (numJogador == 2)
+		{
+
+		}
+		item.respawn();
+	}
+
+	//if (uniTestarColisao(jogador1.getSprite(), jogador1.getX(), jogador1.getY(), 0,
+	//	item2.getSprite(), item2.getX(), item2.getY(), 0))
+	//{
+	//	item2.respawn();
+	//}
+}
+
 
 int Jogador::getX()
 {
@@ -120,14 +188,9 @@ int Jogador::getNumJogador()
 	return numJogador;
 }
 
-bool Jogador::getColisaoJ1()
+Sprite Jogador::getSprite()
 {
-	return colisaoJ1;
-}
-
-bool Jogador::getColisaoJ2()
-{
-	return colisaoJ2;
+	return sprite;
 }
 
 void Jogador::setColisaoJ1(bool colisao)

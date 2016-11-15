@@ -1,6 +1,5 @@
 // a libunicornio desenha os elementos na ordem de inserção
 #include "Jogo.h"
-#include "util.h"
 
 void Jogo::telaInicial()
 {
@@ -22,6 +21,21 @@ void Jogo::telaInicial()
 
 void Jogo::telaJogo()
 {
+	switch (numFase)
+	{
+	case FASE0: if (podeCarregarFase)
+	{
+		fase[0].inicializar();
+		podeCarregarFase = false;
+	}
+		break;
+	case FASE1:
+		break;
+	case FASE2:
+		break;
+	default:
+		break;
+	}
 	// aqui entraria o lance das fases
 	fase[0].atualizar();
 	fase[0].desenhar();
@@ -61,10 +75,11 @@ void Jogo::inicializar()
 	botaoSair.setPos(gJanela.getLargura() * 3 / 4, 700);
 	botaoVoltar.setPos(gJanela.getLargura() * 3 / 4, 700);
 
-	fase[0].inicializar();
-
 	// põe o jogo no status da tela inicial
 	status = INICIAL;
+
+	numFase = FASE0;
+	podeCarregarFase = true;
 
 }
 

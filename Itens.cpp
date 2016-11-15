@@ -43,21 +43,11 @@ void Itens::desenhar()
 void Itens::atualizar()
 {
 	y += velocidade;
-	//testarColisao();
+	// por a colisão com o jogador aqui
+
 	if (y > gJanela.getAltura() + 20)
 	{
-		x = rand() % (gJanela.getLargura() + 1);
-		y = -(rand() % 565 + 70);
-		
-		switch (rand() % 2)
-		{
-		case 0: setTipo(BOMBA);
-			sprite.setSpriteSheet("bomba");
-			break;
-		case 1: setTipo(FLECHA);
-			sprite.setSpriteSheet("flecha");
-			break;
-		}
+		respawn();
 	}
 }
 
@@ -66,6 +56,22 @@ void Itens::resetar()
 	x = xInicial;
 	y = yInicial;
 	tipo = tipoInicial;
+}
+
+void Itens::respawn()
+{
+	x = rand() % (gJanela.getLargura() + 1);
+	y = -(rand() % 565 + 70);
+
+	switch (rand() % 2)
+	{
+	case 0: setTipo(BOMBA);
+		sprite.setSpriteSheet("bomba");
+		break;
+	case 1: setTipo(FLECHA);
+		sprite.setSpriteSheet("flecha");
+		break;
+	}
 }
 
 int Itens::getX()
@@ -91,6 +97,11 @@ bool Itens::getVivo()
 TipoItem Itens::getTipo()
 {
 	return tipo;
+}
+
+Sprite Itens::getSprite()
+{
+	return sprite;
 }
 
 void Itens::setTipo(TipoItem tipo_)

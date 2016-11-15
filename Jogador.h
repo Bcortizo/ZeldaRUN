@@ -1,24 +1,25 @@
 #pragma once
 #include "util.h"
+#include "Itens.h"
+
 class Jogador
 {
 private:
 	int x, y, velocidade;
 	Sprite sprite;
 	Som som;
-	int vidas, rupees, bombas, flechas, numJogador;
+	int vidas, rupees, bombas, flechas, numJogador, xInicial, yInicial;
 	bool colisaoJ1, colisaoJ2;
 
 public:
 	Jogador();
 	~Jogador();
 
-	void inicializar(int jogador); // se é jogador 1 ou 2
+	void inicializar(int jogador, int x_, int y_); // se é jogador 1 ou 2
 	void desenhar();
 	void atualizar();
 	void resetar(); // volta o jogador ao padrão inicial
-
-	void testarColisao(TipoObjeto tipo);
+	void colisaoItens(Itens &item);
 
 	// GETS e SETS
 	int getX();
@@ -29,8 +30,7 @@ public:
 	int getBombas();
 	int getFlechas();
 	int getNumJogador();
-	bool getColisaoJ1();
-	bool getColisaoJ2();
+	Sprite getSprite();
 	
 	void setVelocidade(int velo);
 	void setVidas(int vidas_);

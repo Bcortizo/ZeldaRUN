@@ -1,6 +1,6 @@
-#include "libUnicornio.h"
 #include "util.h"
 #pragma once
+
 class Itens
 {
 private:
@@ -18,14 +18,14 @@ public:
 	void desenhar();
 	void atualizar();
 	void resetar();
-
-	void testarColisao();
+	void respawn();
 
 	int getX();
 	int getY();
 	int getVelocidade();
 	bool getVivo();
 	TipoItem getTipo();
+	Sprite getSprite();
 
 	void setTipo(TipoItem tipo_);
 	void setVivo(bool vivo_);

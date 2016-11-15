@@ -8,8 +8,9 @@ private:
 	Status status;
 	Sprite spr_telaJogo;
 	BotaoSprite botaoJogar, botaoVoltar, botaoSair;
-	Jogador jogador1, jogador2;
 	Fase fase[3];
+	NumeroFase numFase;
+	bool podeCarregarFase;
 
 	// gerencia as telas de jogo
 	void telaInicial();

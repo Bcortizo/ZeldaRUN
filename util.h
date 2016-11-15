@@ -26,3 +26,10 @@ enum Status
 	SAIR
 };
 
+enum NumeroFase
+{
+	FASE0,
+	FASE1,
+	FASE2
+};
+
