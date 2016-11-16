@@ -65,3 +65,11 @@ void Fase::atualizar()
 		scrollTela += 1;
 	}
 }
+
+void Fase::resetar()
+{
+	jogador1.resetar();
+	jogador2.resetar();
+	item1.resetar();
+	item2.resetar();
+}

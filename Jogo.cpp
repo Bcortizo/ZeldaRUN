@@ -8,6 +8,7 @@ void Jogo::telaInicial()
 	if (botaoJogar.estaClicado())
 	{
 		status = JOGO;
+		resetarFase = true;
 	}
 
 	botaoSair.atualizar();
@@ -24,10 +25,15 @@ void Jogo::telaJogo()
 	switch (numFase)
 	{
 	case FASE0: if (podeCarregarFase)
-	{
-		fase[0].inicializar();
-		podeCarregarFase = false;
-	}
+		{
+			fase[0].inicializar();
+			podeCarregarFase = false;
+		}
+				if (resetarFase)
+		{
+			fase[0].resetar();
+			resetarFase = false;
+		}
 		break;
 	case FASE1:
 		break;
@@ -76,14 +82,14 @@ void Jogo::inicializar()
 	botaoVoltar.setPos(gJanela.getLargura() * 3 / 4, 700);
 
 	// carrega as fontes (em Fase.h eu defini um objeto do tipo Texto, chamado "interface")
-	gRecursos.carregarFonte("interface", "fonte_padrao.ttf")
+	gRecursos.carregarFonte("interface", "fonte_padrao.ttf");
 
 	// põe o jogo no status da tela inicial
 	status = INICIAL;
 
 	numFase = FASE0;
 	podeCarregarFase = true;
-
+	
 }
 
 void Jogo::finalizar()

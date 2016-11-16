@@ -10,7 +10,7 @@ private:
 	BotaoSprite botaoJogar, botaoVoltar, botaoSair;
 	Fase fase[3];
 	NumeroFase numFase;
-	bool podeCarregarFase;
+	bool podeCarregarFase, resetarFase;
 
 	// gerencia as telas de jogo
 	void telaInicial();

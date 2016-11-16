@@ -20,6 +20,6 @@ public:
 	void inicializar();
 	void desenhar();
 	void atualizar();
-	//void resetar();
+	void resetar();
 };
 
