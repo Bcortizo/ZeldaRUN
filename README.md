@@ -1,12 +1,12 @@
 # ZeldaRUN
 Study project to get acquainted with c++ programming and the libunicornio library.
 
-This project uses libunicornio. a library for making 2D games in C++. As such, it needs to be compiled using libunicornio's 
-files and folders (after downloading libunicornio - just google for it GutHub page - make a copy of 
+This project uses libunicornio, a library for making 2D games in C++. As such, it needs to be compiled using libunicornio's 
+files and folders (after downloading libunicornio - just google for its GutHub page - make a copy of 
 /libUnicornio-master/projetos/base_VS2015 (don't move the copy from the "projetos" folder), rename the copy to your liking and put 
 this project inside the renamed folder. Compile using Visual Studio 2015.
 
-Remember to #include "libunicornio.h" to use libunicornio's functions, classes and methods. Libunicornio is documented and localized 
+Remember to #include "libunicornio.h" to correctly use libunicornio's functions, classes and methods. Libunicornio is documented and localized 
 to Brazilian Portuguese.
 
 ---------------------------------------------------
@@ -21,4 +21,4 @@ Se for fazer alterações ou adicionar algo, lembre de usar #include "libunicorn
 -----------------------------------------------------
 
 Disclaimer: This project is for study purposes only, the assets used here (images, sounds, etc.) are copyrighted to their respective 
-owners, when applicable.
+owners, wherever applicable.
