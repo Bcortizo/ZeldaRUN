@@ -1,6 +1,7 @@
 #pragma once
 #include "util.h"
 #include "Itens.h"
+#include "Objeto.h"
 
 class Jogador
 {

@@ -20,7 +20,8 @@ void Fase::inicializar()
 	sFundo2.setSpriteSheet("telaJogo");
 
 	// seta a fonte do texto
-
+	interface.setFonte("interface");
+	interface.setString("Bombas: \nFlechas: ");
 	
 
 	// inicializa jogador, itens e objetos, e o valor de scroll da tela
@@ -50,6 +51,9 @@ void Fase::atualizar()
 
 	jogador1.colisaoItens(item1);
 	jogador1.colisaoItens(item2);
+
+	jogador2.colisaoItens(item1);
+	jogador2.colisaoItens(item2);
 
 	// configura a velocidade de scroll da tela de fundo
 	if (scrollTela >= gJanela.getAltura())

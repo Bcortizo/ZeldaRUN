@@ -75,6 +75,9 @@ void Jogo::inicializar()
 	botaoSair.setPos(gJanela.getLargura() * 3 / 4, 700);
 	botaoVoltar.setPos(gJanela.getLargura() * 3 / 4, 700);
 
+	// carrega as fontes (em Fase.h eu defini um objeto do tipo Texto, chamado "interface")
+	gRecursos.carregarFonte("interface", "fonte_padrao.ttf")
+
 	// põe o jogo no status da tela inicial
 	status = INICIAL;
 
@@ -87,6 +90,8 @@ void Jogo::finalizar()
 {
 	//	O resto da finalização vem aqui (provavelmente, em ordem inversa a inicialização)!
 	//	...
+
+	gRecursos.descarregarTudo();
 
 	uniFinalizar();
 }

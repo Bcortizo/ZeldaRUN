@@ -122,29 +122,18 @@ void Jogador::colisaoItens(Itens &item)
 	if (uniTestarColisao(sprite, x, y, 0,
 		item.getSprite(), item.getX(), item.getY(), 0))
 	{
-		if (numJogador == 1)
-		{
-			if (item.getTipo() == BOMBA)
-			{
-				bombas++;
-			}
-			else if (item.getTipo() == FLECHA)
-			{
-				flechas++;
-			}
-		}
-		else if (numJogador == 2)
-		{
 
+		if (item.getTipo() == BOMBA)
+		{
+			bombas++;
 		}
+		else if (item.getTipo() == FLECHA)
+		{
+			flechas++;
+		}
+
 		item.respawn();
 	}
-
-	//if (uniTestarColisao(jogador1.getSprite(), jogador1.getX(), jogador1.getY(), 0,
-	//	item2.getSprite(), item2.getX(), item2.getY(), 0))
-	//{
-	//	item2.respawn();
-	//}
 }
 
 
