@@ -10,7 +10,7 @@ private:
 	Som musica;
 	Jogador jogador1, jogador2;
 	Itens item1, item2;
-	Texto interface;
+	Texto interfaceJ1, interfaceJ2;
 	int scrollTela;
 
 public:

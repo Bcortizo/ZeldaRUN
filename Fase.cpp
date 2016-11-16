@@ -20,9 +20,10 @@ void Fase::inicializar()
 	sFundo2.setSpriteSheet("telaJogo");
 
 	// seta a fonte do texto
-	interface.setFonte("interface");
-	interface.setString("Bombas: \nFlechas: ");
-	
+	interfaceJ1.setFonte("interface");
+	interfaceJ1.setCor(255, 50, 50);
+	interfaceJ2.setFonte("interface");
+	interfaceJ2.setCor(255, 50, 50);
 
 	// inicializa jogador, itens e objetos, e o valor de scroll da tela
 	jogador1.inicializar(1, gJanela.getLargura() / 3, gJanela.getAltura() * 4 / 5);
@@ -40,6 +41,10 @@ void Fase::desenhar()
 	item2.desenhar();
 	jogador1.desenhar();
 	jogador2.desenhar();
+
+	//desenha o texto da interface na tela
+	interfaceJ1.desenhar(150, 50);
+	interfaceJ2.desenhar(gJanela.getLargura() / 2 + 150, 50);
 }
 
 void Fase::atualizar()
@@ -54,6 +59,10 @@ void Fase::atualizar()
 
 	jogador2.colisaoItens(item1);
 	jogador2.colisaoItens(item2);
+
+	// atualiza o texto da interface
+	interfaceJ1.setString("Bombas: " + to_string(jogador1.getBombas()) + "\nFlechas: " + to_string(jogador1.getFlechas()));
+	interfaceJ2.setString("Bombas: " + to_string(jogador2.getBombas()) + "\nFlechas: " + to_string(jogador2.getFlechas()));
 
 	// configura a velocidade de scroll da tela de fundo
 	if (scrollTela >= gJanela.getAltura())
